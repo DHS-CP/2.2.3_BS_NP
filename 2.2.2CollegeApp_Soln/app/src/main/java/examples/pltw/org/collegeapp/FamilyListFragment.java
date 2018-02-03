@@ -2,6 +2,7 @@ package examples.pltw.org.collegeapp;
 
 import android.support.v4.app.ListFragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -13,7 +14,8 @@ import java.util.ArrayList;
  * Created by operam on 1/24/2018.
  */
 
-public class FamilyListFragment extends ListFragment {
+public class FamilyListFragment extends
+        ListFragment {
     private static final String TAG = "FamilyFragment";
     private static Family mFamily;
 
@@ -42,10 +44,12 @@ public class FamilyListFragment extends ListFragment {
 
             FamilyMember f = getItem(position);
 
+            Log.d(TAG, "The type of FamilyMember at position " + position + " is " + f.getClass().getName());
+
             TextView nameTextView =
                     (TextView)convertView
                             .findViewById(R.id.family_member_list_item_nameTextView);
-            nameTextView.setText(f.getFirstName() + " " + f.getLastName());
+            nameTextView.setText(f.toString());
 
             return convertView;
         }

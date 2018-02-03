@@ -6,12 +6,24 @@ package examples.pltw.org.collegeapp;
 public class Guardian extends FamilyMember {
     private String occupation;
 
+    public Guardian(String firstName, String lastName, String occupation){
+        super.setFirstName(firstName);
+        super.setLastName(lastName);
+        this.occupation = occupation;
+    }
+
     public Guardian(String firstName, String lastName){
         super.setFirstName(firstName);
         super.setLastName(lastName);
+        occupation = "unknown";
     }
     public Guardian(){
         super();
+        occupation = "unknown";
+    }
+
+    public String toString(){
+        return "Guardian " + getFirstName() + " " + getLastName() + "\n" + "Occupation " + getOccupation();
     }
 
     public String getOccupation() {
@@ -21,4 +33,6 @@ public class Guardian extends FamilyMember {
     public void setOccupation(String occupation) {
         this.occupation = occupation;
     }
+
+
 }

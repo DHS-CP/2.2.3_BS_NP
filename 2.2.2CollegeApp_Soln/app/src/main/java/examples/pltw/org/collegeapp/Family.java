@@ -16,8 +16,10 @@ public class Family {
         family = new ArrayList();
         Guardian me = new Guardian("Nikolai", "Peram");
         Guardian you = new Guardian();
+        Sibling somene = new Sibling("Paulette", "Peram", 13);
         family.add(me);
         family.add(you);
+        family.add(somene);
         family.add(new Guardian("Dank", "Memes"));
     }
 
